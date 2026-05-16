@@ -180,7 +180,7 @@
 
 <nav class="nav" id="nav">
   <a href="index.html" class="nav__logo">
-    <img src="logo.png" alt="S&G Trädgårdservice logotyp">
+    <img src="S_G.png" alt="S&G Trädgårdservice logotyp" style="height:42px;width:auto">
     <span class="nav__logo-text">S&G Trädgårdservice</span>
   </a>
   <ul class="nav__menu">
@@ -230,6 +230,13 @@
         <p>Välj det område som passar bäst. Du kan ändra senare.</p>
 
         <div class="choice-grid">
+          <div class="choice" data-service="hackklippning">
+            <div class="choice__icon">🌿</div>
+            <div>
+              <h4>Häckklippning</h4>
+              <p>Jämn och fin häck, formklippning, bortforsling. Från 450 kr/h.</p>
+            </div>
+          </div>
           <div class="choice" data-service="grasklippning">
             <div class="choice__icon">🌿</div>
             <div>
@@ -409,6 +416,7 @@
     <div class="footer__col">
       <h4>Tjänster</h4>
       <ul>
+        <li><a href="hackklippning.html">Häckklippning</a></li>
         <li><a href="tradgardsskotsel.html">Trädgårdsskötsel</a></li>
         <li><a href="grasklippning.html">Gräsklippning</a></li>
         <li><a href="snorojning.html">Snöröjning</a></li>
@@ -442,6 +450,32 @@
    All prices are estimates in SEK ex VAT.
    ========================================= */
 const SERVICES = {
+  hackklippning: {
+    name: 'Häckklippning',
+    icon: '🌿',
+    sizeUnit: 'löpmeter',
+    sizeMin: 5, sizeMax: 200, sizeDefault: 30,
+    sizeLabels: [
+      {max:10,  label:'Kort häck'},
+      {max:30,  label:'Mellanlång häck'},
+      {max:80,  label:'Längre häck'},
+      {max:150, label:'Stor fastighet'},
+      {max:9999,label:'Kommersiell anläggning'}
+    ],
+    base: 450,
+    perSqm: 8,
+    frequencies: [
+      {id:'once', label:'Engångsbesök', sub:'En klippning', visitsPerYear:1, mult:1.0},
+      {id:'twice', label:'2 gånger/säsong', sub:'Vår + sommar', visitsPerYear:2, mult:0.95},
+      {id:'three', label:'3 gånger/säsong', sub:'Regelbunden skötsel', visitsPerYear:3, mult:0.90}
+    ],
+    defaultFreq: 'once',
+    period: 'per säsong',
+    extras: [
+      {id:'bort', label:'Bortforsling av klipp', sub:'Vi tar med materialet', price:200, perVisit:true},
+      {id:'form', label:'Formklippning', sub:'Precision & detalj', price:300, perVisit:true}
+    ]
+  },
   grasklippning: {
     name: 'Gräsklippning',
     icon: '🌿',

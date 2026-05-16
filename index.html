@@ -182,12 +182,13 @@
 
   @media (max-width: 960px){
     .intro__grid{grid-template-columns:1fr;gap:30px}
-    .main-services__grid{grid-template-columns:1fr}
+    .main-services__grid{grid-template-columns:1fr 1fr !important}
     .process__steps{grid-template-columns:1fr 1fr;gap:20px}
     .trust__inner{grid-template-columns:1fr;gap:40px}
     .trust__media{height:380px}
   }
   @media (max-width: 540px){
+    .main-services__grid{grid-template-columns:1fr !important}
     .process__steps{grid-template-columns:1fr}
     .intro__stats{grid-template-columns:1fr;gap:24px}
     .hero{min-height:560px}
@@ -199,7 +200,7 @@
 <!-- ============ NAV ============ -->
 <nav class="nav transparent" id="nav">
   <a href="index.html" class="nav__logo">
-    <img src="logo.png" alt="S&G Trädgårdservice logotyp">
+    <img src="S_G.png" alt="S&G Trädgårdservice logotyp" style="height:42px;width:auto;filter:brightness(0) invert(1)" class="nav__logo-img">
     <span class="nav__logo-text">S&G Trädgårdservice</span>
   </a>
   <ul class="nav__menu">
@@ -278,10 +279,23 @@
 <section class="main-services">
   <div class="main-services__head">
     <div class="section-label center">Våra huvudtjänster</div>
-    <h2>Tre kärnområden – <em class="accent">året runt.</em></h2>
+    <h2>Fyra kärnområden – <em class="accent">året runt.</em></h2>
   </div>
 
-  <div class="main-services__grid">
+  <div class="main-services__grid" style="grid-template-columns:repeat(4,1fr)">
+
+    <a href="hackklippning.html" style="text-decoration:none;color:inherit">
+      <article class="ms-card">
+        <div class="ms-card__media ms-card__media--leaf" style="background:none">
+          <img src="https://anasnassan92-cmyk.github.io/s-g/tradgardsskotsel-img.jpg" alt="Häckklippning" style="width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="ms-card__body">
+          <h3>Häckklippning</h3>
+          <p>Få en jämn och fin form på häcken. Häckar visar trädgårdens gränser tydligare och skapar harmoni & ordning i trädgården. Från 450 kr/h.</p>
+          <span class="ms-card__link">Läs mer →</span>
+        </div>
+      </article>
+    </a>
 
     <a href="tradgardsskotsel.html" style="text-decoration:none;color:inherit">
       <article class="ms-card">
@@ -622,6 +636,7 @@
     <div class="footer__col">
       <h4>Tjänster</h4>
       <ul>
+        <li><a href="hackklippning.html">Häckklippning</a></li>
         <li><a href="tradgardsskotsel.html">Trädgårdsskötsel</a></li>
         <li><a href="grasklippning.html">Gräsklippning</a></li>
         <li><a href="snorojning.html">Snöröjning</a></li>
